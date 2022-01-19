@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./bootstrap.css">
+        <title>
+            Quadratic calculator
+        </title>
+    </head>
+    <body class="bg-dark">
+        <div class="container text-white">
+            
+            <div class="container w-50 my-4">
+                <h1 class="my-2">Please put in your values correctly in this form</h1>
+                <p class="my-2">ax<sup>2</sup>+bx+c=0</p>
+                <div class="input my-4">
+                    <input type="text" id="value 1" class="form-control" placeholder="value of a">
+                </div>    
+                <div class="input my-4">
+                    <input type="text" id="value 2" class="form-control" placeholder="value of b">
+                </div>
+                <div class="input my-4">
+                    <input type="text" id="value 3" class="form-control" placeholder="value of c">
+                </div>
+                <p>value 1:</p>
+                <p id="demo"></p>
+                <p>value 2:</p>
+                <p id="demo 2"></p>
+                <div class="mt-2">
+                    <button type="button" onclick="myfunction()"  class="btn btn-success">solve</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            function myfunction() {
+                var a = document.getElementById('value 1').value;
+                var b = document.getElementById('value 2').value;
+                var c = document.getElementById('value 3').value;
+                a=Number(a)
+                b=Number(b)
+                c=Number(c)
+                var u = b ** 2
+                var v = 4 * a * c
+                var w = (u - v)**(1/2)
+                var z = (-b + w)/ (2 * a)
+                var y = (-b - w)/ (2 * a)
+                document.getElementById("demo").innerHTML = z;
+                document.getElementById("demo 2").innerHTML = y;
+            }
+        </script>
+    </body>
+</html>
